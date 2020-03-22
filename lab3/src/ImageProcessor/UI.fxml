@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ImageProcessor.Controller"
+            prefHeight="600.0" prefWidth="900.0">
+
+    <TableView fx:id="tableView" layoutX="50.0" layoutY="28.0" prefHeight="500.0" prefWidth="700.0">
+        <columns>
+            <TableColumn prefWidth="300.0" text="Image" fx:id="imageName" />
+            <TableColumn prefWidth="200.0" text="Progress" fx:id="imageProgress" />
+            <TableColumn prefWidth="200.0" text="Status" fx:id="imageStatus" />
+        </columns>
+    </TableView>
+
+    <Button fx:id="button" layoutX="835.0" layoutY="200.0" onAction="#buttonClick" prefWidth="80" text="Upload files" />
+    <fx:define>
+        <ToggleGroup  fx:id="methodGroup" />
+    </fx:define>
+    <children>
+        <RadioButton fx:id="sequential" text="Sequential" toggleGroup="$methodGroup" layoutX="760.0" layoutY="250.0" prefWidth="120" selected="true"/>
+        <RadioButton fx:id="concurrentDefault" text="Concurrent with 4 threads" toggleGroup="$methodGroup" layoutX="760.0" layoutY="290.0" prefWidth="250"/>
+        <RadioButton fx:id="concurrentCustom" text="Concurrent custom: " toggleGroup="$methodGroup" layoutX="760.0" layoutY="330.0" prefWidth="250"/>
+    </children>
+    <TextField fx:id="threadsNumber" promptText="no. of threads" prefWidth="90" layoutX="890.0" layoutY="327.0" />
+    <Label fx:id="timeLabel" prefWidth="150" layoutX="765.0" layoutY="400.0" text="Processing time:" />
+    <Label fx:id="timeValue" prefWidth="50" layoutX="860.0" layoutY="400.0" text="-" />
+
+</AnchorPane>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane fx:controller="fileUploader.Controller" xmlns:fx="http://javafx.com/fxml"
+            prefHeight="200" prefWidth="320">
+    <top>
+        <Label fx:id="statusLabel" prefWidth="640" text="Choose file" alignment="CENTER" />
+    </top>
+    <center>
+        <Button fx:id="button" onAction="#buttonClick" prefWidth="160" text="Upload file" />
+    </center>
+    <bottom>
+        <ProgressBar fx:id="progressBar" progress="0.0" prefWidth="240">
+            <BorderPane.margin>
+                <Insets left="40.0" right="40.0" bottom="20.0" />
+            </BorderPane.margin>
+        </ProgressBar>
+    </bottom>
+</BorderPane>
